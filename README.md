@@ -1,0 +1,2 @@
+# Pashut
+Simplifying Language Project
