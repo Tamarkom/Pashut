@@ -16,6 +16,5 @@
             ]
         }
     },
-    "workspaceFolder": "/workspaces/workshop_genai",
     "forwardPorts": [3000, 8000, 5000] // Add your required ports here
 }
