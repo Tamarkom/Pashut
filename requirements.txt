@@ -4,7 +4,7 @@ langchain==0.2.0
 langchain-core==0.2.0
 langchain_community==0.2.0
 langchain_openai==0.1.7
-lipykernel==6.29.4
+ipykernel==6.29.4
 openai==1.56.0
 pydantic==2.8.2
 pypdf==4.2.0
