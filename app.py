@@ -72,7 +72,7 @@ def chain_prompts(text_input):
 
 app = Flask(__name__)
 
-@app.route("/chain_prompts", methods=["POST"])
+@app.route("/", methods=["POST"])
 def handle_chain_prompts():
     data = request.json
     text_input = data.get("text_input", "")
