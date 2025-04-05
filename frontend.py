@@ -93,7 +93,3 @@ if st.button("Simplify Text"):
     else:
         logging.warning("API key or text input missing.")
         st.error("Please provide both API key and text input")
-
-if __name__ == "__main__":
-    # Run Streamlit on a specific port
-    st.run(port=8000)
