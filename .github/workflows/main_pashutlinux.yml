@@ -33,11 +33,6 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Install frontend dependencies
-        run: |
-          cd frontend
-          npm install
-
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
