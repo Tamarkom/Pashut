@@ -67,7 +67,7 @@ if st.button("Simplify Text"):
         try:
             logging.info("Sending request to backend...")
             response = requests.post(
-                "https://pashutlinux.azurewebsites.net",  # Updated to match the deployed backend URL
+                "https://pashutlinux.azurewebsites.net/api/endpoint",  # Updated to match the deployed backend URL
                 json=data,
                 timeout=10  # Add a timeout of 10 seconds
             )

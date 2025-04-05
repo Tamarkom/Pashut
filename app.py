@@ -73,22 +73,28 @@ def chain_prompts(text_input, api_key):
 
 app = Flask(__name__)
 
-@app.route("/", methods=["POST"])
+@app.route('/api/endpoint', methods=['POST'])
 def handle_chain_prompts():
     print("Request received:", request.json)  # Debug log
     data = request.json
+    print("Received data:", data)  # Debug log to confirm the payload
     text_input = data.get("text_input", "")
     api_key = data.get("api_key", "")  # Get the API key from the request payload
 
     if not api_key:
+        print("Error: API key is missing")  # Debug log for missing API key
         return jsonify({"error": "API key is missing"}), 400
 
     result = chain_prompts(text_input, api_key)
     print("Response to send:", result)  # Debug log
-    print("Endpoint:", endpoint)
-    print("Deployment Name:", deployment_name)
-    print("API Version:", api_version)
     return jsonify({"result": result})
 
+@app.route('/')
+def serve_frontend():
+    # Serve the main page of the Streamlit app
+    return send_from_directory('frontend', 'index.html')
+
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    threading.Thread(target=run_streamlit).start()
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
